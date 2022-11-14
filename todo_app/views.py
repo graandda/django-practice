@@ -74,9 +74,7 @@ def complete_task_status(request, pk):
         task.status = True
 
     task.save()
-    return HttpResponseRedirect(
-        reverse_lazy("todo_app:index")
-    )
+    return HttpResponseRedirect(reverse_lazy("todo_app:index"))
 
 
 def undo_task_status(request, pk):
@@ -84,6 +82,4 @@ def undo_task_status(request, pk):
     if task.status:
         task.status = False
     task.save()
-    return HttpResponseRedirect(
-        reverse_lazy("todo_app:index")
-    )
+    return HttpResponseRedirect(reverse_lazy("todo_app:index"))
